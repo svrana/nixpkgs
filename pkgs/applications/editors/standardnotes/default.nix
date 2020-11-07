@@ -2,18 +2,18 @@
   , fetchurl, runtimeShell }:
 
 let
-  version = "3.3.3";
+  version = "3.5.6";
   pname = "standardnotes";
   name = "${pname}-${version}";
 
   plat = {
-    i386-linux = "-i386";
-    x86_64-linux = "";
+    i386-linux = "-linux-i386";
+    x86_64-linux = "-linux-x86_64";
   }.${stdenv.hostPlatform.system};
 
   sha256 = {
-    i386-linux = "2ccdf23588b09d645811e562d4fd7e02ac0e367bf2b34e373d8470d48544036d";
-    x86_64-linux = "6366d0a37cbf2cf51008a666e40bada763dd1539173de01e093bcbe4146a6bd8";
+    i386-linux = "60d68cd0047d03c6752a2f20b8c2b5c9f536b14c0978b79f16ebb8bbf07817c9";
+    x86_64-linux = "6d9bbafa1a57b061b9b9cf77af818e863c43799bbc06f4355e81a535a215209c";
   }.${stdenv.hostPlatform.system};
 
   src = fetchurl {
