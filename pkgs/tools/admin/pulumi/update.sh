@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="2.15.1"
+VERSION="2.15.4"
 
 # Bash 3 compatible for Darwin
 plugins=(

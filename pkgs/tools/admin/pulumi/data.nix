@@ -1,12 +1,12 @@
 # DO NOT EDIT! This file is generated automatically by update.sh
 { }:
 {
-  version = "2.15.1";
+  version = "2.15.4";
   pulumiPkgs = {
     x86_64-linux = [
       {
-        url = "https://get.pulumi.com/releases/sdk/pulumi-v2.15.1-linux-x64.tar.gz";
-        sha256 = "1g5xqv55g589igpc1ivrc2phw5zl1j58apa7x8fjzr5pgpzfgivv";
+        url = "https://get.pulumi.com/releases/sdk/pulumi-v2.15.4-linux-x64.tar.gz";
+        sha256 = "0fv00sfqlj1qx32wi4wxjb5g3g70pc6pic7bjivq4xzqxq0qwm6h";
       }
       {
         url = "https://api.pulumi.com/releases/plugins/pulumi-resource-aws-v3.17.0-linux-amd64.tar.gz";
@@ -31,8 +31,8 @@
     ];
     x86_64-darwin = [
       {
-        url = "https://get.pulumi.com/releases/sdk/pulumi-v2.15.1-darwin-x64.tar.gz";
-        sha256 = "0i1g0byyyrc55n8448bh80s2xicc8yjkjm6cvwnk1rbbp2ngmhqs";
+        url = "https://get.pulumi.com/releases/sdk/pulumi-v2.15.4-darwin-x64.tar.gz";
+        sha256 = "12ikd179c3mshlf9833z7f65kx99lkmdng6fap2blp5rrr6zc3sw";
       }
       {
         url = "https://api.pulumi.com/releases/plugins/pulumi-resource-aws-v3.17.0-darwin-amd64.tar.gz";
