@@ -18,9 +18,19 @@ in
   # determines the default: later modules (if enabled) are preferred.
   # E.g., if Plasma 5 is enabled, it supersedes xterm.
   imports = [
-    ./none.nix ./xterm.nix ./xfce.nix ./plasma5.nix ./lumina.nix
-    ./lxqt.nix ./enlightenment.nix ./gnome.nix ./kodi.nix
-    ./mate.nix ./pantheon.nix ./surf-display.nix ./cde.nix
+    ./none.nix
+    ./xterm.nix
+    ./xfce.nix
+    ./plasma5.nix
+    ./lumina.nix
+    ./lxqt.nix
+    ./enlightenment.nix
+    ./gnome.nix
+    ./kodi.nix
+    ./mate.nix
+    ./pantheon.nix
+    ./surf-display.nix
+    ./cde.nix
     ./cinnamon.nix
   ];
 
@@ -58,9 +68,10 @@ in
 
       session = mkOption {
         internal = true;
-        default = [];
+        default = [ ];
         example = singleton
-          { name = "kde";
+          {
+            name = "kde";
             bgSupport = true;
             start = "...";
           };
@@ -72,11 +83,14 @@ in
         apply = map (d: d // {
           manage = "desktop";
           start = d.start
-          + optionalString (needBGCond d) ''
-            if [ -e $HOME/.background-image ]; then
-              ${pkgs.feh}/bin/feh --bg-${cfg.wallpaper.mode} ${optionalString cfg.wallpaper.combineScreens "--no-xinerama"} $HOME/.background-image
-            fi
-          '';
+            + optionalString (needBGCond d)
+            concatStringsSep
+            "\n"
+            ''
+              if [ -e $HOME/.background-image ]; then
+                ${pkgs.feh}/bin/feh --bg-${cfg.wallpaper.mode} ${optionalString cfg.wallpaper.combineScreens "--no-xinerama"} $HOME/.background-image
+              fi
+            '';
         });
       };
 
